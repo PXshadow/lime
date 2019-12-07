@@ -37,6 +37,9 @@
 #include <ui/Haptic.h>
 #include <ui/Joystick.h>
 #include <ui/JoystickEvent.h>
+
+#include <ui/Microphone.h>
+
 #include <ui/KeyCode.h>
 #include <ui/KeyEvent.h>
 #include <ui/MouseEvent.h>
@@ -2184,6 +2187,32 @@ namespace lime {
 
 	}
 
+	void lime_microphone_open () {
+		//Microphone::open();
+		Microphone::open();
+
+	}
+	HL_PRIM void hl_lime_microphone_open() {
+		//Microphone::open();
+	}
+	void lime_microphone_close () {
+		Microphone::close();
+	}
+	HL_PRIM void hl_lime_microphone_close() {
+		//Microphone::close();
+	}
+	void lime_microphone_pause(int id) {
+		//Microphone::pause(id);
+	}
+	HL_PRIM void hl_lime_microphone_pause(int id) {
+		//Microphone::pause(id);
+	}
+	void lime_microphone_lock() {
+		//Microphone::lock();
+	}
+	void lime_microphone_unlock() {
+		//Microphone::unlock();
+	}
 
 	void lime_joystick_event_manager_register (value callback, value eventObject) {
 
@@ -2191,7 +2220,6 @@ namespace lime {
 		JoystickEvent::eventObject = new ValuePointer (eventObject);
 
 	}
-
 
 	HL_PRIM void hl_lime_joystick_event_manager_register (vclosure* callback, JoystickEvent* eventObject) {
 
@@ -3852,6 +3880,13 @@ namespace lime {
 	DEFINE_PRIME2 (lime_image_load_bytes);
 	DEFINE_PRIME2 (lime_image_load_file);
 	DEFINE_PRIME0 (lime_jni_getenv);
+
+	DEFINE_PRIME0v (lime_microphone_open);
+	/*DEFINE_PRIME0v (lime_microphone_close);
+	DEFINE_PRIME1v (lime_microphone_pause);
+	DEFINE_PRIME0v (lime_microphone_lock);
+	DEFINE_PRIME0v (lime_microphone_unlock);*/
+
 	DEFINE_PRIME2v (lime_joystick_event_manager_register);
 	DEFINE_PRIME1 (lime_joystick_get_device_guid);
 	DEFINE_PRIME1 (lime_joystick_get_device_name);

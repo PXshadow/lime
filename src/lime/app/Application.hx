@@ -5,6 +5,7 @@ import lime.system.System;
 import lime.ui.Gamepad;
 import lime.ui.GamepadAxis;
 import lime.ui.GamepadButton;
+import lime.ui.Microphone;
 import lime.ui.Joystick;
 import lime.ui.JoystickHatPosition;
 import lime.ui.KeyCode;
@@ -183,6 +184,9 @@ class Application extends Module
 		@param	gamepad	The gamepad that was disconnected
 	**/
 	public function onGamepadDisconnect(gamepad:Gamepad):Void {}
+
+
+	public function onMicrophone(microphone:Microphone):Void {}
 
 	/**
 		Called when a joystick axis move event is fired

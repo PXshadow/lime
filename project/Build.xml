@@ -249,6 +249,7 @@
 			<file name="src/backend/sdl/SDLApplication.cpp" />
 			<file name="src/backend/sdl/SDLGamepad.cpp" />
 			<file name="src/backend/sdl/SDLJoystick.cpp" />
+			<file name="src/backend/sdl/SDLMicrophone.cpp"/>
 			<file name="src/backend/sdl/SDLKeyCode.cpp" />
 			<file name="src/backend/sdl/SDLMutex.cpp" />
 			<file name="src/backend/sdl/SDLSystem.cpp" />

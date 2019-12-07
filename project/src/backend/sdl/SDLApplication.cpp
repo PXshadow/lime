@@ -446,7 +446,6 @@ namespace lime {
 
 	}
 
-
 	void SDLApplication::ProcessJoystickEvent (SDL_Event* event) {
 
 		if (JoystickEvent::callback) {

@@ -476,6 +476,11 @@ class NativeCFFI
 		Bool->Int>(cpp.Prime._loadPrime("lime", "lime_image_data_util_threshold", "ooooiiiiiiibi", false));
 	private static var lime_image_data_util_unmultiply_alpha = new cpp.Callable<cpp.Object->cpp.Void>(cpp.Prime._loadPrime("lime",
 		"lime_image_data_util_unmultiply_alpha", "ov", false));
+
+	private static var lime_microphone_open = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_application_open", "o", false));
+	private static var lime_microphone_close = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_application_close", "o", false));
+	private static var lime_microphone_pause = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_application_pause", "i", false));
+
 	private static var lime_joystick_get_device_guid = new cpp.Callable<Int->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_joystick_get_device_guid", "io",
 		false));
 	private static var lime_joystick_get_device_name = new cpp.Callable<Int->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_joystick_get_device_name", "io",
@@ -678,6 +683,13 @@ class NativeCFFI
 	private static var lime_image_data_util_set_pixels = CFFI.load("lime", "lime_image_data_util_set_pixels", -1);
 	private static var lime_image_data_util_threshold = CFFI.load("lime", "lime_image_data_util_threshold", -1);
 	private static var lime_image_data_util_unmultiply_alpha = CFFI.load("lime", "lime_image_data_util_unmultiply_alpha", 1);
+
+	private static var lime_microphone_open = CFFI.load("lime","lime_microphone_open",0);
+	private static var lime_microphone_close = CFFI.load("lime","lime_microphone_close",0);
+	private static var lime_microphone_pause = CFFI.load("lime","lime_microphone_pause",1);
+	private static var lime_microphone_lock = CFFI.load("lime","lime_microphone_lock",0);
+	private static var lime_microphone_unlock = CFFI.load("lime","lime_microphone_unlock",0);
+
 	private static var lime_joystick_get_device_guid = CFFI.load("lime", "lime_joystick_get_device_guid", 1);
 	private static var lime_joystick_get_device_name = CFFI.load("lime", "lime_joystick_get_device_name", 1);
 	private static var lime_joystick_get_num_axes = CFFI.load("lime", "lime_joystick_get_num_axes", 1);
@@ -977,6 +989,10 @@ class NativeCFFI
 	{
 		return null;
 	}
+
+	@:hlNative("lime","lime_microphone_open") private static function lime_microphone_open():Void {}
+	@:hlNative("lime","lime_microphone_close") private static function lime_microphone_close():Void {}
+	@:hlNative("lime","lime_microphone_pause") private static function lime_microphone_pause():Void {}
 
 	@:hlNative("lime", "lime_gamepad_get_device_name") private static function lime_gamepad_get_device_name(id:Int):hl.Bytes
 	{
