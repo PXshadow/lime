@@ -217,6 +217,12 @@ class NativeCFFI
 
 	@:cffi private static function lime_joystick_event_manager_register(callback:Dynamic, eventObject:Dynamic):Void;
 
+	@:cffi private static function lime_microphone_close():Void;
+	@:cffi private static function lime_microphone_close():Void;
+	@:cffi private static function lime_microphone_lock():Void;
+	@:cffi private static function lime_microphone_unlock():Void;
+	@:cffi private static function lime_microphone_pause(i:Int):Void;
+
 	@:cffi private static function lime_jpeg_decode_bytes(data:Dynamic, decodeData:Bool, buffer:Dynamic):Dynamic;
 
 	@:cffi private static function lime_jpeg_decode_file(path:String, decodeData:Bool, buffer:Dynamic):Dynamic;

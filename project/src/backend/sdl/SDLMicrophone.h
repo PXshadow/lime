@@ -1,9 +1,10 @@
-
-
+#ifndef LIME_SDL_MICROPHONE_H
+#define LIME_SDL_MICROPHONE_H
 
 #include <SDL.h>
 #include <map>
 #include <stdint.h>
+#include <ui/Microphone.h>
 
 
 namespace lime {
@@ -12,11 +13,11 @@ namespace lime {
 	class SDLMicrophone {
 
 		public:
-			static void open ();
+			/*static void open ();
 			static void close ();
 			static void pause (int index);
-			static void callback (void* userdata, uint8_t* stream,int len);
 			static void lock ();
-			static void unlock ();
+			static void unlock ();*/
 	};
 }
+#endif
