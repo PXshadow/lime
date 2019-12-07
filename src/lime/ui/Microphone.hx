@@ -16,15 +16,21 @@ class Microphone
 
 	@:noCompletion public static function open():Void
 	{
+		#if (lime_cffi && !macro)
 		NativeCFFI.lime_microphone_open();
+		#end
 	}
 
 	@:noCompletion public static function close():Void
 	{
+		#if (lime_cffi && !macro)
 		NativeCFFI.lime_microphone_close();
+		#end
 	}
 	@:noCompletion public static function pause(int:Int):Void
 	{
+		#if (lime_cffi && !macro)
 		NativeCFFI.lime_microphone_pause(int);
+		#end
 	}
 }
