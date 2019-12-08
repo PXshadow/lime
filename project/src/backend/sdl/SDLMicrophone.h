@@ -18,6 +18,7 @@ namespace lime {
 			static void pause (int index);
 			static void lock ();
 			static void unlock ();*/
+			void audioRecordingCallback( void* userdata, Uint8* stream, int len );
 	};
 }
 #endif

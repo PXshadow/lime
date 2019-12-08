@@ -30,6 +30,7 @@ class Microphone
 	@:noCompletion public static function pause(int:Int):Void
 	{
 		#if (lime_cffi && !macro)
+		//NativeCFFI.lime_microphone_pause(int);
 		NativeCFFI.lime_microphone_pause(int);
 		#end
 	}
