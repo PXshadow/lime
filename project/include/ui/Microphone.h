@@ -11,7 +11,7 @@ namespace lime {
 		static void close();
 		static void pause(int index);
 		static void callback();
-		static Uint8* get();
+		static uint8_t get();
 		static void lock();
 		static void unlock();
 	};

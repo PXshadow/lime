@@ -2188,30 +2188,34 @@ namespace lime {
 	}
 
 	void lime_microphone_open () {
-		//Microphone::open();
 		Microphone::open();
-
 	}
 	HL_PRIM void hl_lime_microphone_open() {
-		//Microphone::open();
+		Microphone::open();
 	}
 	void lime_microphone_close () {
 		Microphone::close();
 	}
 	HL_PRIM void hl_lime_microphone_close() {
-		//Microphone::close();
+		Microphone::close();
 	}
 	void lime_microphone_pause(int id) {
-		//Microphone::pause(id);
+		Microphone::pause(id);
 	}
 	HL_PRIM void hl_lime_microphone_pause(int id) {
-		//Microphone::pause(id);
+		Microphone::pause(id);
 	}
 	void lime_microphone_lock() {
-		//Microphone::lock();
+		Microphone::lock();
+	}
+	HL_PRIM void hl_lime_microphone_lock() {
+		Microphone::lock();
 	}
 	void lime_microphone_unlock() {
-		//Microphone::unlock();
+		Microphone::unlock();
+	}
+	HL_PRIM void hl_lime_microphone_unlock() {
+		Microphone::unlock();
 	}
 
 	void lime_joystick_event_manager_register (value callback, value eventObject) {
@@ -3882,10 +3886,10 @@ namespace lime {
 	DEFINE_PRIME0 (lime_jni_getenv);
 
 	DEFINE_PRIME0v (lime_microphone_open);
-	/*DEFINE_PRIME0v (lime_microphone_close);
+	DEFINE_PRIME0v (lime_microphone_close);
 	DEFINE_PRIME1v (lime_microphone_pause);
 	DEFINE_PRIME0v (lime_microphone_lock);
-	DEFINE_PRIME0v (lime_microphone_unlock);*/
+	DEFINE_PRIME0v (lime_microphone_unlock);
 
 	DEFINE_PRIME2v (lime_joystick_event_manager_register);
 	DEFINE_PRIME1 (lime_joystick_get_device_guid);
@@ -4066,6 +4070,12 @@ namespace lime {
 	DEFINE_HL_PRIM (_I32, lime_image_data_util_threshold, _TIMAGE _TIMAGE _TRECTANGLE _TVECTOR2 _I32 _I32 _I32 _I32 _I32 _I32 _I32 _BOOL);
 	DEFINE_HL_PRIM (_VOID, lime_image_data_util_unmultiply_alpha, _TIMAGE);
 	DEFINE_HL_PRIM (_TBYTES, lime_image_encode, _TIMAGEBUFFER _I32 _I32 _TBYTES);
+
+	DEFINE_HL_PRIM (_VOID, lime_microphone_open, _NO_ARG);
+	DEFINE_HL_PRIM (_VOID, lime_microphone_close, _NO_ARG);
+	DEFINE_HL_PRIM (_VOID, lime_microphone_lock, _NO_ARG);
+	DEFINE_HL_PRIM (_VOID, lime_microphone_unlock, _NO_ARG);
+	DEFINE_HL_PRIM (_VOID, lime_microphone_pause, _I32);
 	// DEFINE_PRIME2 (lime_image_load);
 	DEFINE_HL_PRIM (_TIMAGEBUFFER, lime_image_load_bytes, _TBYTES _TIMAGEBUFFER);
 	DEFINE_HL_PRIM (_TIMAGEBUFFER, lime_image_load_file, _STRING _TIMAGEBUFFER);

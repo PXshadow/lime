@@ -221,7 +221,7 @@ class NativeCFFI
 	@:cffi private static function lime_microphone_close():Void;
 	@:cffi private static function lime_microphone_lock():Void;
 	@:cffi private static function lime_microphone_unlock():Void;
-	@:cffi private static function lime_microphone_pause(int:Int):Void;
+	@:cffi private static function lime_microphone_pause(id:Int):Void;
 
 	@:cffi private static function lime_jpeg_decode_bytes(data:Dynamic, decodeData:Bool, buffer:Dynamic):Dynamic;
 
@@ -487,7 +487,7 @@ class NativeCFFI
 	private static var lime_microphone_close = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_microphone_close", "v", false));
 	private static var lime_microphone_unlock = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_microphone_unlock", "v", false));
 	private static var lime_microphone_lock = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_microphone_lock", "v", false));
-	private static var lime_microphone_pause = new cpp.Callable<Void->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_microphone_pause", "iv", false));
+	private static var lime_microphone_pause = new cpp.Callable<Int->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_microphone_pause", "iv", false));
 
 	private static var lime_joystick_get_device_guid = new cpp.Callable<Int->cpp.Object>(cpp.Prime._loadPrime("lime", "lime_joystick_get_device_guid", "io",
 		false));
@@ -1001,6 +1001,8 @@ class NativeCFFI
 	@:hlNative("lime","lime_microphone_open") private static function lime_microphone_open():Void {}
 	@:hlNative("lime","lime_microphone_close") private static function lime_microphone_close():Void {}
 	@:hlNative("lime","lime_microphone_pause") private static function lime_microphone_pause(int:Int):Void {}
+	@:hlNative("lime","lime_microphone_lock") private static function lime_microphone_lock():Void {}
+	@:hlNative("lime","lime_microphone_unlock") private static function lime_microphone_unlock():Void {}
 
 	@:hlNative("lime", "lime_gamepad_get_device_name") private static function lime_gamepad_get_device_name(id:Int):hl.Bytes
 	{
